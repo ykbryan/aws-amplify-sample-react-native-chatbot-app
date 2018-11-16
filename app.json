@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "react-amplify-app",
+    "name": "react-amplify-chatbot",
     "description": "This project is really great.",
-    "slug": "app",
+    "slug": "react-amplify-chatbot",
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "platforms": [

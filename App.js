@@ -19,7 +19,7 @@ export default class App extends React.Component {
     messages: [
       {
         _id: chatId,
-        text: "Hello developer",
+        text: "Hello developer, this is a BookTrip Lex Chatbot. Try \"I want to reserve a hotel for tonight\"",
         user: botUser,
         createdAt: new Date(),
       }
