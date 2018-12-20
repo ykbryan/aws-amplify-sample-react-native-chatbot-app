@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { GiftedChat } from "react-native-gifted-chat";
-import Amplify, { Interactions } from 'aws-amplify';
+import Amplify, { Analytics, Interactions } from 'aws-amplify';
 import aws_exports from './aws-exports';
 
 Amplify.configure(aws_exports);
@@ -26,12 +26,17 @@ export default class App extends React.Component {
     ]
   };
 
+  componentDidMount() {
+    Analytics.record('componentDidMount')
+  }
+
   sendMessageToBot = async (userInput) => {
     // Provide a bot name and user input
     const response = await Interactions.send(botName, userInput);
 
     // Log chatbot response
     this.appendChatMessages([this.formatMessage(response.message)])
+    Analytics.record('sendMessageToBot')
   }
 
   formatMessage = (message) => {
